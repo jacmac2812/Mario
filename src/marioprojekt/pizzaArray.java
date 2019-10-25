@@ -7,11 +7,11 @@ public class pizzaArray {
 
     private ArrayList<Pizza> pizzaMenu;
 
-    private String pizza;
+    private String navn;
 
-    public pizzaArray(String pizza) {
+    public pizzaArray(String navn) {
         pizzaMenu = new ArrayList<>();
-        this.pizza = pizza;
+        this.navn = navn;
     }
 
     public void tilføjPizza(Pizza nyPizza) {
