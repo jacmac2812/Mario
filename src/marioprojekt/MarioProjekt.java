@@ -4,7 +4,7 @@ package marioprojekt;
 public class MarioProjekt {
 
     public static void main(String[] args) {
-       pizzaArray marioPIzzaMenu = new pizzaArray("Mario'sPizza");
+       /*pizzaArray marioPIzzaMenu = new pizzaArray("Mario'sPizza");
 
         //marioPIzzaMenu.tilføjPizza(new Pizza("navn","indhold",pris,nummer));
         marioPIzzaMenu.tilføjPizza(new Pizza("Vesuvio","tomatsauce, ost, skinke og oregano",57,1));
@@ -22,8 +22,14 @@ public class MarioProjekt {
         marioPIzzaMenu.tilføjPizza(new Pizza("Venezia","tomatsauce, ost, skinke, bacon og oregano",61,13));
         marioPIzzaMenu.tilføjPizza(new Pizza("Mafia","tomatsauce, ost, pepperoni, bacon, løg og oregano",61,14));
        
-        marioPIzzaMenu.Pizza();
+        marioPIzzaMenu.pizza(); */
+       Pizza pizza = new Pizza("Mafia","tomatsauce, ost, pepperoni, bacon, løg og oregano",61,14); 
+       Bestillingsliste tempListe = new Bestillingsliste(25.10);
+       tempListe.tilføjBestilling(new Bestilling(pizza, "20:45"));
+       //tempListe.tilføjBestilling(new Bestilling(3, "17:39"));
+       //tempListe.tilføjBestilling(new Bestilling(6, "22:00"));
+       tempListe.visBestillingsliste();
+       UserInterface.userDialog();
         
     }
-    
 }

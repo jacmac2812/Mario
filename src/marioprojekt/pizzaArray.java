@@ -18,7 +18,7 @@ public class pizzaArray {
         pizzaMenu.add(nyPizza);
     }
 
-    public void Pizza() {
+    public void pizza() {
         for (int i = 0; i < pizzaMenu.size(); i++) {
             System.out.println(pizzaMenu.get(i).toString());
 
