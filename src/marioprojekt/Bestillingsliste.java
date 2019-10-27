@@ -1,5 +1,6 @@
 package marioprojekt;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -7,12 +8,12 @@ import java.util.ArrayList;
  * @author Acer
  */
 public class Bestillingsliste {
-    private double dato;
+    private LocalDate date;
     private ArrayList<Bestilling> bestillingsliste;
     
-    public Bestillingsliste(double dato) {
+    public Bestillingsliste(LocalDate date) {
         bestillingsliste = new ArrayList<>();
-        this.dato = dato;
+        this.date = date;
     }
     
     public void tilføjBestilling(Bestilling nyBestilling) {

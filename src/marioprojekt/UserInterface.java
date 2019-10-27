@@ -1,5 +1,6 @@
 package marioprojekt;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,7 +10,7 @@ import java.util.Scanner;
  */
 public class UserInterface {
     public static void userDialog(pizzaArray tempMenu) {
-        /*sout Velkommen til computeren
+        /*(Eksempel) Velkommen til computeren
         Hvordan ønsker du at forsætte?
         1 = opret
         2 = fjern
@@ -18,21 +19,36 @@ public class UserInterface {
         5 = se statistik
         0 = afslut program (check)
         Eventuel tilbage knap*/
+        LocalDate date = LocalDate.now();
         
         int input;
-        int ordrenummer = 0;
+        int ordrenummer = 1;
+        Bestillingsliste bestillingsliste = new Bestillingsliste(date);
         Scanner myScan = new Scanner(System.in);
+        Scanner myScan2 = new Scanner(System.in);
         System.out.println(startScreen());
         while(myScan.hasNextInt()) {
-            //System.out.println(startScreen());
             input = myScan.nextInt();
             if (input == 1) {
-                System.out.println("Antal pizzaer:");
-                int numOfPizza = Integer.parseInt(myScan.nextLine());
-                String arrayOfPizza[] = new String[numOfPizza];
+                Pizza tempPizza;
+                Bestilling bestilling;
+                System.out.println("Opretter bestilling\nVælg afhentningstidspunkt:");
+                String tempAT = myScan2.next();
+                System.out.println("Vælg pizza:");
+                while (myScan2.hasNextInt()) {
+                    tempPizza = tempMenu.getPizza(myScan2.nextInt()+1);
+                    bestilling = new Bestilling(tempPizza, tempAT, ordrenummer);
+                    bestillingsliste.tilføjBestilling(bestilling);
+                    System.out.println("Vælg ny pizza eller skriv nej for at afslutte bestilling");
+                }
+                ordrenummer++;
+                System.out.println(startScreen());
+                
             } else if (input == 2) {
                 
             } else if (input == 3) {
+                bestillingsliste.visBestillingsliste();
+                System.out.println(startScreen());
                 
             } else if (input == 4) {
                 tempMenu.pizza();

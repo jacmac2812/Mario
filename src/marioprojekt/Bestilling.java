@@ -1,5 +1,7 @@
 package marioprojekt;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Acer
@@ -7,10 +9,12 @@ package marioprojekt;
 public class Bestilling {
     private String afhentningsTidspunkt;
     private Pizza pizza;
+    private int ordrenummer;
     
-    public Bestilling(Pizza pizza, String afhentningsTidspunkt) {
+    public Bestilling(Pizza pizza, String afhentningsTidspunkt, int ordrenummer) {
         this.pizza = pizza;
         this.afhentningsTidspunkt = afhentningsTidspunkt;
+        this.ordrenummer = ordrenummer;
     }
 
     public String getAfhentningsTidspunkt() {
@@ -21,9 +25,17 @@ public class Bestilling {
         this.afhentningsTidspunkt = afhentningsTidspunkt;
     }
 
+    public int getOrdrenummer() {
+        return ordrenummer;
+    }
+
+    public void setOrdrenummer(int ordrenummer) {
+        this.ordrenummer = ordrenummer;
+    }
+    
     @Override
     public String toString() {
-        return pizza.toString() + "\nAfhentnings tidspunkt: " + getAfhentningsTidspunkt();
+        return "Ordrenummer: " + getOrdrenummer() + "   Afhentnings tidspunkt: " + getAfhentningsTidspunkt() + "\n" + pizza.toString();
     }
     
     

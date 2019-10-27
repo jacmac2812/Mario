@@ -17,6 +17,10 @@ public class pizzaArray {
     public void tilføjPizza(Pizza nyPizza) {
         pizzaMenu.add(nyPizza);
     }
+    
+    public Pizza getPizza (int i) {
+        return pizzaMenu.get(i);
+    }
 
     public void pizza() {
         for (int i = 0; i < pizzaMenu.size(); i++) {
