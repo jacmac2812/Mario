@@ -38,6 +38,10 @@ public class Bestilling {
         return "Ordrenummer: " + getOrdrenummer() + "   Afhentnings tidspunkt: " + getAfhentningsTidspunkt() + "\n" + pizza.toString();
     }
     
+    public String toStringPizza() {
+        return pizza.toString();
+    } 
+    
     
     
 }

@@ -15,7 +15,15 @@ public class Bestillingsliste {
         bestillingsliste = new ArrayList<>();
         this.date = date;
     }
-    
+
+    public ArrayList<Bestilling> getBestillingsliste() {
+        return bestillingsliste;
+    }
+
+    public void setBestillingsliste(ArrayList<Bestilling> bestillingsliste) {
+        this.bestillingsliste = bestillingsliste;
+    }
+        
     public void tilføjBestilling(Bestilling nyBestilling) {
         bestillingsliste.add(nyBestilling);
     }
