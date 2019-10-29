@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Acer
+ * @author Acer & jacobsimonsen
  */
 public class Bestilling {
     private String afhentningsTidspunkt;

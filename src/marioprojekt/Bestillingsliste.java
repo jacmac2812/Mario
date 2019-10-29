@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Acer
+ * @author Acer & jacobsimonsen
  */
 public class Bestillingsliste {
 

@@ -47,6 +47,6 @@ public class Pizza {
     }
 
     public String toString() {
-        return String.format("%d. %s: %s %d kr", nummer,navn,indhold,pris);
+        return String.format("%d. %s: %s %f kr", nummer,navn,indhold,pris);
     }
 }

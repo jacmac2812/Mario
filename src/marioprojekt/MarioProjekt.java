@@ -1,30 +1,15 @@
-
 package marioprojekt;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import Data.FileFacade;
 
 public class MarioProjekt {
 
     public static void main(String[] args) {
-        ArrayList<Pizza> menu = new ArrayList();
-//       pizzaArray marioPizzaMenu = new pizzaArray("Marios Pizza");
-//       indlæsMenukort(marioPizzaMenu);
-       
-       //Pizza pizza = new Pizza("Mafia","tomatsauce, ost, pepperoni, bacon, løg og oregano",61,14); 
-       //Bestillingsliste tempListe = new Bestillingsliste(25.10);
-       //tempListe.tilføjBestilling(new Bestilling(pizza, "20:45"));
-       //tempListe.tilføjBestilling(new Bestilling(3, "17:39"));
-       //tempListe.tilføjBestilling(new Bestilling(6, "22:00"));
-       //tempListe.visBestillingsliste();
-       UserInterface.userDialog(menu);
-        
+        Menu menu = new Menu();
+        FileFacade file = new FileFacade();
+        UserInterface.userDialog(menu.getMenu());
     }
-    
+
 //    public static pizzaArray indlæsMenukort(pizzaArray tempMenu) {
 //        File menukort = new File("src\\Data\\Menukort.csv");
 //        BufferedReader br; 
