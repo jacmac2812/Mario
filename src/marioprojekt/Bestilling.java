@@ -9,12 +9,13 @@ import java.util.ArrayList;
 public class Bestilling {
     private String afhentningsTidspunkt;
     private ArrayList<Pizza> pizzaer;
+    private Pizza pizza;
     private int ordrenummer;
     
-    public Bestilling(ArrayList<Pizza> pizzaer, String afhentningsTidspunkt, int ordrenummer) {
+    public Bestilling(ArrayList<Pizza> menu, Pizza pizza, int ordrenummer, String afhentningsTidspunkt ) {
         this.pizzaer = new ArrayList<>();
-        this.afhentningsTidspunkt = afhentningsTidspunkt;
         this.ordrenummer = ordrenummer;
+        this.afhentningsTidspunkt = afhentningsTidspunkt;
     }
 
     public String getAfhentningsTidspunkt() {
@@ -36,12 +37,16 @@ public class Bestilling {
     public ArrayList<Pizza> getPizzaer() {
         return pizzaer;
     }
-//      
-//    @Override
-//    public String toString() {
-//        return "Ordrenummer: " + getOrdrenummer() + "   Afhentnings tidspunkt: " + getAfhentningsTidspunkt() + "\n" + pizza.toString();
-//    }
-//    
+      
+    @Override
+    public String toString() {
+       return "Ordrenummer: " + getOrdrenummer() + "   Afhentnings tidspunkt: " + getAfhentningsTidspunkt() + "\n" + pizza.toString() + "\n";
+   }
+    
+
+    public Pizza getPizza() {
+        return pizza;
+    }
 
     
     

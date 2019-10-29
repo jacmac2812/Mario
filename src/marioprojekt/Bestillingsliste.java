@@ -38,7 +38,7 @@ public class Bestillingsliste {
         for (Bestilling best : bestillingsliste) {
             retVal += "Ordrenummer: " + best.getOrdrenummer() + " Afhentningstidspunkt: " + best.getAfhentningsTidspunkt() + "\n";
             for (Pizza pizza : best.getPizzaer()) {
-                retVal += best.getPizzaer().toString();
+                best.getPizzaer().toString();
             }
 
             // System.out.println(bestillingsliste.get(i).toString());

@@ -4,14 +4,14 @@ public class Pizza {
 
     String navn;
     String indhold;
-    int pris;
+    double pris;
     int nummer;
 
-    public Pizza(String navn, String indhold, int pris, int nummer) {
-        this.navn = navn;
-        this.indhold = indhold;
-        this.pris = pris;
+    public Pizza(int nummer, String navn, double pris, String indhold) {
         this.nummer = nummer;
+        this.navn = navn;
+        this.pris = pris;
+        this.indhold = indhold;
     }
 
     public String getNavn() {

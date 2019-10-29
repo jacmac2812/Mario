@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class UserInterface {
 
-    public static void userDialog(pizzaArray tempMenu) {
+    public static void userDialog(ArrayList<Pizza> menu) {
         /*(Eksempel) Velkommen til computeren
         Hvordan ønsker du at forsætte?
         1 = opret (check)
@@ -30,7 +30,7 @@ public class UserInterface {
         Scanner myScan = new Scanner(System.in);
         Scanner myScan2 = new Scanner(System.in);
         Scanner myScan3 = new Scanner(System.in);
-
+        
         System.out.println(startScreen());
         while (myScan.hasNextInt()) {
             input = myScan.nextInt();
@@ -40,8 +40,9 @@ public class UserInterface {
                 String tempAT = myScan2.next();
                 System.out.println("Vælg pizza:");
                 while (myScan2.hasNextInt()) {
-                    tempPizza = tempMenu.getPizza(myScan2.nextInt() - 1);
-                    bestilling = new Bestilling(tempPizza, tempAT, ordrenummer);
+                    tempPizza = menu.get(myScan2.nextInt() - 1);
+                    bestilling = new Bestilling(menu, tempPizza, ordrenummer, tempAT);
+//                    public Bestilling(ArrayList<Pizza> menu, Pizza pizza, int ordrenummer, String afhentningsTidspunkt )
                     bestillingsliste.tilføjBestilling(bestilling);
                     //Statistik.lavStatistik(bestilling);
                     System.out.println("Vælg ny pizza eller skriv nej for at afslutte bestilling");
@@ -68,7 +69,9 @@ public class UserInterface {
                 System.out.println(startScreen());
 
             } else if (input == 4) {
-                tempMenu.pizza();
+                for(Pizza pizza : menu) {
+                    System.out.println(pizza.toString());
+                } 
                 System.out.println(startScreen());
             } else if (input == 5) {
 
@@ -78,8 +81,6 @@ public class UserInterface {
 
             }
         }
-
-    
 
     public static String startScreen() {
         String diag = "";
