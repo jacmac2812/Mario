@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Acer & jacobsimonsen
+ * @author christianmadsen & jacobsimonsen % jonasjørgensen
  */
 public class Bestillingsliste {
 
@@ -29,19 +29,23 @@ public class Bestillingsliste {
         bestillingsliste.add(nyBestilling);
     }
 
-    public void fjernBestilling(int ordreNummer) {
-        //bestillingsliste.remove(bestilling);
+    public String fjernBestilling(int ordreNummer) {
         for (Bestilling bestilling : bestillingsliste) {
             if (ordreNummer == bestilling.getOrdrenummer()) {
                 bestillingsliste.remove(bestilling);
-                break;
+                System.out.println("Ordrenummer: " + ordreNummer + " er fjernet fra listen");
+                return "Ordrenummer: " + ordreNummer + " er fjernet fra listen"; 
+            } else {
+                System.out.println("Bestillingen findes ikke");
+                return "Bestillingen findes ikke";
             }
         }
+        return "";
     }
 
     public void visBestillingsliste() {
         String retVal = "";
-        
+
         for (Bestilling best : bestillingsliste) {
             retVal += best.toString() + "\n";
         }

@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Acer & jacobsimonsen
+ * @author christianmadsen
  */
 public class Bestilling {
+
     private String afhentningsTidspunkt;
     private ArrayList<Pizza> pizzaer;
     private int ordrenummer;
-    
-    public Bestilling(ArrayList<Pizza> pizzaer, int ordrenummer, String afhentningsTidspunkt ) {
+
+    public Bestilling(ArrayList<Pizza> pizzaer, int ordrenummer, String afhentningsTidspunkt) {
         this.pizzaer = new ArrayList<>();
         this.ordrenummer = ordrenummer;
         this.afhentningsTidspunkt = afhentningsTidspunkt;
@@ -36,25 +37,17 @@ public class Bestilling {
     public ArrayList<Pizza> getPizzaer() {
         return pizzaer;
     }
-    public void addPizza(Pizza pizza){
+
+    public void addPizza(Pizza pizza) {
         pizzaer.add(pizza);
     }
-      
+
     @Override
     public String toString() {
-        String result = "Ordrenummer: " + getOrdrenummer() + "   Afhentnings tidspunkt: " + getAfhentningsTidspunkt() + "\n"; 
+        String result = "Ordrenummer: " + getOrdrenummer() + "   Afhentnings tidspunkt: " + getAfhentningsTidspunkt() + "\n";
         for (Pizza pizza : pizzaer) {
             result += pizza.toString() + "\n";
         }
-       return  result;
-   }
-    
-
-//    public Pizza getPizza() {
-//        return pizza;
-//    }
-
-    
-    
-    
+        return result;
+    }
 }

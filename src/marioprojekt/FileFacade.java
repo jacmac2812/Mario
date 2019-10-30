@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Data;
+package marioprojekt;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,7 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import marioprojekt.Bestilling;
@@ -22,8 +16,8 @@ import marioprojekt.Bestilling;
  * @author jacobsimonsen
  */
 public class FileFacade {
-    
-    File orderHistory = new File("Ordre Historik.txt");
+
+    File orderHistory = new File("src\\Data\\Ordre Historik.txt");
     FileWriter fw;
     BufferedWriter bufWriter;
     FileReader fr;
@@ -66,31 +60,10 @@ public class FileFacade {
         return history;
     }
 
-//Write a method to find the highest order number from the files
-    public int readHighestOrderNo() {
-
-        ArrayList<String> history = readHistory();
-        ArrayList<Integer> orderNumbers = new ArrayList();
-        int orderNo;
-        int orderNumber;
-        for (String str : history) {
-            if (str.contains("OrdreNummer: ")) {
-                String[] orderString;
-                orderString = str.split(" ");
-                orderNumber = Integer.parseInt(orderString[1]);
-                orderNumbers.add(orderNumber);
-            }
+    public void arraySplit() {
+        for (String string : readHistory()) {
+            System.out.println(string);
         }
-        if (!orderNumbers.isEmpty()) {
-            orderNo = (int) Collections.max(orderNumbers);
-            orderNo++;
-        } else {
-            orderNo = 1;
-        }
-        return orderNo;
     }
 
-    public String readStatistics() {
-        return "Statistik ikke undersøttet i fil-modulet endnu";
-    }
 }

@@ -1,13 +1,13 @@
 package marioprojekt;
 
-import Data.FileFacade;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+import marioprojekt.FileFacade;
 
 /**
  *
- * @author Acer & jacobsimonsen
+ * @author christianmadsen & jacobsimonsen % jonasjørgensen
  */
 public class UserInterface {
 
@@ -19,9 +19,9 @@ public class UserInterface {
         2 = fjern (check)
         3 = se liste (check)
         4 = se menu (check)
-        5 = se statistik
+        5 = se ordrehistorik (check)
         0 = afslut program (check)
-        Eventuel tilbage knap*/
+         */
         LocalDate date = LocalDate.now();
 
         int input;
@@ -31,7 +31,7 @@ public class UserInterface {
         Scanner myScan = new Scanner(System.in);
         Scanner myScan2 = new Scanner(System.in);
         Scanner myScan3 = new Scanner(System.in);
-
+        FileFacade filefacade = new FileFacade();
         System.out.println(startScreen());
         while (myScan.hasNextInt()) {
             input = myScan.nextInt();
@@ -48,14 +48,12 @@ public class UserInterface {
                     tempPizza = menu.get(myScan2.nextInt() - 1);
                     myScan2.nextLine();
                     bestilling.addPizza(tempPizza);
-                    //bestilling = new Bestilling(pizzaer, ordrenummer, tempAT);
-//                    public Bestilling(ArrayList<Pizza> menu, Pizza pizza, int ordrenummer, String afhentningsTidspunkt )
-                    //Statistik.lavStatistik(bestilling);
                     System.out.println("Vælg ny pizza eller skriv nej for at afslutte bestilling");
                 }
                 myScan2.nextLine();
                 bestillingsliste.tilføjBestilling(bestilling);
                 ordrenummer++;
+                filefacade.archiveOrder(bestilling);
                 System.out.println(startScreen());
 
             } else if (input == 2) {
@@ -64,14 +62,6 @@ public class UserInterface {
                 ordreInput = myScan3.nextInt();
                 myScan3.nextLine();
                 bestillingsliste.fjernBestilling(ordreInput);
-//                for (int i = 0; i < bestillingsliste.getBestillingsliste().size(); i++) {
-//                    if (ordreInput == bestillingsliste.getBestillingsliste().get(i).getOrdrenummer()) {
-//                        bestillingsliste.fjernBestilling(bestillingsliste.getBestillingsliste().get(i));
-//                        System.out.println("Bestillingen: " + bestillingsliste.getBestillingsliste().get(i).getOrdrenummer() + " er fjernet");
-//                    } else {
-//                        System.out.println("Bestilling findes ikke");
-//                    }
-//                }
                 System.out.println(startScreen());
 
             } else if (input == 3) {
@@ -84,6 +74,10 @@ public class UserInterface {
                 }
                 System.out.println(startScreen());
             } else if (input == 5) {
+                String dato = date.toString();
+                System.out.println("Dagens dato: " + dato);
+                filefacade.arraySplit();
+                System.out.println(startScreen());
 
             } else if (input == 0) {
                 break;

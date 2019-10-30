@@ -1,5 +1,9 @@
 package marioprojekt;
 
+/**
+ *
+ * @author jacobsimonsen & christianmadsen & jonasjørgensen
+ */
 public class Pizza {
 
     String navn;
@@ -47,6 +51,6 @@ public class Pizza {
     }
 
     public String toString() {
-        return String.format("%d. %s: %s %.2f kr", nummer,navn,indhold,pris);
+        return String.format("%d. %s: %s %.2f kr", nummer, navn, indhold, pris);
     }
 }

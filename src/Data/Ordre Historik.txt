@@ -1,0 +1,19 @@
+Ordrenummer: 1   Afhentnings tidspunkt: 22:30
+3. Cacciatore: tomatsauce, ost, pepperoni og oregano 57,00 kr
+8. Victoria: tomatsauce, ost, skinke, ananas, champignon, løg og oregano 61,00 kr
+9. Toronfo: tomatsauce, ost, skinke, bacon, kebab, chili og oregano 61,00 kr
+
+Ordrenummer: 2   Afhentnings tidspunkt: 15:56
+3. Cacciatore: tomatsauce, ost, pepperoni og oregano 57,00 kr
+7. Silvia: tomatsauce, ost, pepperoni, rød peber, løg, oliven og oregano 61,00 kr
+
+Ordrenummer: 1   Afhentnings tidspunkt: 21:30
+4. Carbona: tomatsauce, ost, kødsauce, spaghetti, cocktailpølser og oregano 63,00 kr
+6. Bertil: tomatsauce, ost, bacon og oregano 57,00 kr
+1. Vesuvio: tomatsauce, ost, skinke og oregano 57,00 kr
+6. Bertil: tomatsauce, ost, bacon og oregano 57,00 kr
+
+Ordrenummer: 1   Afhentnings tidspunkt: 23:41;
+3. Cacciatore: tomatsauce, ost, pepperoni og oregano 57,00 kr;
+7. Silvia: tomatsauce, ost, pepperoni, rød peber, løg, oliven og oregano 61,00 kr;
+
