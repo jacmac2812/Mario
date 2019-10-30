@@ -53,7 +53,8 @@ public class UserInterface {
                     //Statistik.lavStatistik(bestilling);
                     System.out.println("Vælg ny pizza eller skriv nej for at afslutte bestilling");
                 }
-                    bestillingsliste.tilføjBestilling(bestilling);
+                myScan2.nextLine();
+                bestillingsliste.tilføjBestilling(bestilling);
                 ordrenummer++;
                 System.out.println(startScreen());
 
