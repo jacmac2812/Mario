@@ -44,7 +44,7 @@ public class Bestilling {
     public String toString() {
         String result = "Ordrenummer: " + getOrdrenummer() + "   Afhentnings tidspunkt: " + getAfhentningsTidspunkt() + "\n"; 
         for (Pizza pizza : pizzaer) {
-            result += pizza.toString()+ "\n";
+            result += pizza.toString() + "\n";
         }
        return  result;
    }

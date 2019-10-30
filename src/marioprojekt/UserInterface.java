@@ -16,7 +16,7 @@ public class UserInterface {
         /*(Eksempel) Velkommen til computeren
         Hvordan ønsker du at forsætte?
         1 = opret (check)
-        2 = fjern
+        2 = fjern (check)
         3 = se liste (check)
         4 = se menu (check)
         5 = se statistik
@@ -35,15 +35,18 @@ public class UserInterface {
         System.out.println(startScreen());
         while (myScan.hasNextInt()) {
             input = myScan.nextInt();
+            myScan.nextLine();
             if (input == 1) {
                 Pizza tempPizza;
                 System.out.println("Opretter bestilling\nVælg afhentningstidspunkt:");
                 String tempAT = myScan2.next();
+                myScan2.nextLine();
                 System.out.println("Vælg pizza:");
                 ArrayList<Pizza> pizzaer = new ArrayList();
                 bestilling = new Bestilling(pizzaer, ordrenummer, tempAT);
                 while (myScan2.hasNextInt()) {
                     tempPizza = menu.get(myScan2.nextInt() - 1);
+                    myScan2.nextLine();
                     bestilling.addPizza(tempPizza);
                     //bestilling = new Bestilling(pizzaer, ordrenummer, tempAT);
 //                    public Bestilling(ArrayList<Pizza> menu, Pizza pizza, int ordrenummer, String afhentningsTidspunkt )
@@ -58,14 +61,16 @@ public class UserInterface {
                 int ordreInput;
                 System.out.println("Hvilken bestilling skal fjernes?\nSkriv ordrenummer:");
                 ordreInput = myScan3.nextInt();
-                for (int i = 1; i < bestillingsliste.getBestillingsliste().size(); i++) {
-                    if (ordreInput == bestillingsliste.getBestillingsliste().get(i).getOrdrenummer()) {
-                        bestillingsliste.fjernBestilling(bestillingsliste.getBestillingsliste().get(i));
-                        System.out.println("Bestillingen: " + bestillingsliste.getBestillingsliste().get(i).getOrdrenummer() + " er fjernet");
-                    } else {
-                        System.out.println("Bestilling findes ikke");
-                    }
-                }
+                myScan3.nextLine();
+                bestillingsliste.fjernBestilling(ordreInput);
+//                for (int i = 0; i < bestillingsliste.getBestillingsliste().size(); i++) {
+//                    if (ordreInput == bestillingsliste.getBestillingsliste().get(i).getOrdrenummer()) {
+//                        bestillingsliste.fjernBestilling(bestillingsliste.getBestillingsliste().get(i));
+//                        System.out.println("Bestillingen: " + bestillingsliste.getBestillingsliste().get(i).getOrdrenummer() + " er fjernet");
+//                    } else {
+//                        System.out.println("Bestilling findes ikke");
+//                    }
+//                }
                 System.out.println(startScreen());
 
             } else if (input == 3) {

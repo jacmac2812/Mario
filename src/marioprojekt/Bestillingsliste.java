@@ -29,8 +29,14 @@ public class Bestillingsliste {
         bestillingsliste.add(nyBestilling);
     }
 
-    public void fjernBestilling(Bestilling fjernBestilling) {
-        bestillingsliste.remove(fjernBestilling);
+    public void fjernBestilling(int ordreNummer) {
+        //bestillingsliste.remove(bestilling);
+        for (Bestilling bestilling : bestillingsliste) {
+            if (ordreNummer == bestilling.getOrdrenummer()) {
+                bestillingsliste.remove(bestilling);
+                break;
+            }
+        }
     }
 
     public void visBestillingsliste() {
@@ -38,13 +44,7 @@ public class Bestillingsliste {
         
         for (Bestilling best : bestillingsliste) {
             retVal += best.toString() + "\n";
-//            retVal += "Ordrenummer: " + best.getOrdrenummer() + " Afhentningstidspunkt: " + best.getAfhentningsTidspunkt() + "\n";
-//            for (Pizza pizza : best.getPizzaer()) {
-//            retVal += best.getPizzaer().toString();
-//            }
-
-            // System.out.println(bestillingsliste.get(i).toString());
         }
-        System.out.println(retVal);
+        System.out.print(retVal);
     }
 }
