@@ -35,13 +35,16 @@ public class Bestillingsliste {
 
     public void visBestillingsliste() {
         String retVal = "";
+        
         for (Bestilling best : bestillingsliste) {
-            retVal += "Ordrenummer: " + best.getOrdrenummer() + " Afhentningstidspunkt: " + best.getAfhentningsTidspunkt() + "\n";
-            for (Pizza pizza : best.getPizzaer()) {
-                best.getPizzaer().toString();
-            }
+            retVal += best.toString() + "\n";
+//            retVal += "Ordrenummer: " + best.getOrdrenummer() + " Afhentningstidspunkt: " + best.getAfhentningsTidspunkt() + "\n";
+//            for (Pizza pizza : best.getPizzaer()) {
+//            retVal += best.getPizzaer().toString();
+//            }
 
             // System.out.println(bestillingsliste.get(i).toString());
         }
+        System.out.println(retVal);
     }
 }

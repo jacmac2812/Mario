@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class UserInterface {
 
     public static void userDialog(ArrayList<Pizza> menu) {
-        
+
         /*(Eksempel) Velkommen til computeren
         Hvordan ønsker du at forsætte?
         1 = opret (check)
@@ -22,7 +22,6 @@ public class UserInterface {
         5 = se statistik
         0 = afslut program (check)
         Eventuel tilbage knap*/
-
         LocalDate date = LocalDate.now();
 
         int input;
@@ -32,7 +31,7 @@ public class UserInterface {
         Scanner myScan = new Scanner(System.in);
         Scanner myScan2 = new Scanner(System.in);
         Scanner myScan3 = new Scanner(System.in);
-        
+
         System.out.println(startScreen());
         while (myScan.hasNextInt()) {
             input = myScan.nextInt();
@@ -41,14 +40,17 @@ public class UserInterface {
                 System.out.println("Opretter bestilling\nVælg afhentningstidspunkt:");
                 String tempAT = myScan2.next();
                 System.out.println("Vælg pizza:");
+                ArrayList<Pizza> pizzaer = new ArrayList();
+                bestilling = new Bestilling(pizzaer, ordrenummer, tempAT);
                 while (myScan2.hasNextInt()) {
                     tempPizza = menu.get(myScan2.nextInt() - 1);
-                    bestilling = new Bestilling(menu, tempPizza, ordrenummer, tempAT);
+                    bestilling.addPizza(tempPizza);
+                    //bestilling = new Bestilling(pizzaer, ordrenummer, tempAT);
 //                    public Bestilling(ArrayList<Pizza> menu, Pizza pizza, int ordrenummer, String afhentningsTidspunkt )
-                    bestillingsliste.tilføjBestilling(bestilling);
                     //Statistik.lavStatistik(bestilling);
                     System.out.println("Vælg ny pizza eller skriv nej for at afslutte bestilling");
                 }
+                    bestillingsliste.tilføjBestilling(bestilling);
                 ordrenummer++;
                 System.out.println(startScreen());
 
@@ -63,17 +65,17 @@ public class UserInterface {
                     } else {
                         System.out.println("Bestilling findes ikke");
                     }
-                }    
+                }
                 System.out.println(startScreen());
 
-                }else if (input == 3) {
-                bestillingsliste.getBestillingsliste();
+            } else if (input == 3) {
+                bestillingsliste.visBestillingsliste();
                 System.out.println(startScreen());
 
             } else if (input == 4) {
-                for(Pizza pizza : menu) {
+                for (Pizza pizza : menu) {
                     System.out.println(pizza.toString());
-                } 
+                }
                 System.out.println(startScreen());
             } else if (input == 5) {
 
@@ -81,8 +83,8 @@ public class UserInterface {
                 break;
             }
 
-            }
         }
+    }
 
     public static String startScreen() {
         String diag = "";
