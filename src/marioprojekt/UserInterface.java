@@ -67,7 +67,7 @@ public class UserInterface {
                 System.out.println(startScreen());
 
                 }else if (input == 3) {
-                bestillingsliste.visBestillingsliste();
+                bestillingsliste.getBestillingsliste();
                 System.out.println(startScreen());
 
             } else if (input == 4) {
